@@ -1,50 +1,93 @@
-# Welcome to your Expo app 👋
+# Speak Daily 🎙️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Speak Daily** is an AI-powered English speaking coach and real-time speech analytics application. Built using React Native and Expo, it acts as a veteran language teacher designed to help you communicate more clearly, confidently, and professionally. 
 
-## Get started
+Whether you're preparing for presentations, practicing everyday English, or aiming to reduce filler words, Speak Daily tracks your speech, analyzes patterns, and provides actionable feedback.
 
-1. Install dependencies
+---
 
+## ✨ Features
+
+- **🎙️ High-Fidelity Speech Transcription**: Integrated with [AssemblyAI](https://www.assemblyai.com/) to process voice input accurately.
+- **📊 Multi-Dimensional Scoring**: Evaluates spoken responses across four key metrics:
+  - **Fluency**: Speech flow and speed.
+  - **Clarity**: Pronunciation, articulation, and grammar.
+  - **Structure**: Completeness of thoughts and sentence phrasing.
+  - **Richness**: Vocabulary diversity and sophisticated language patterns.
+- **🎓 The "Veteran Teacher" Suggestion Engine**:
+  - **Encouraging & Gentle**: Minor errors (like using filler words such as "um" or "like") receive constructive, polite recommendations.
+  - **Strict on Inappropriate Language**: Detects profanity and vulgarity, giving immediate, direct guidance with polite alternatives to keep your language professional.
+- **📈 Progress Tracking**: Review past speech sessions, analyze score breakdowns, and track improvements over time with visual progress charts.
+- **📱 Modern Cross-Platform UI**: Clean, engaging interface built with React Native and Expo, optimized for mobile devices.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
+- **Navigation**: Expo Router (File-based routing)
+- **Language**: TypeScript
+- **Speech-to-Text API**: [AssemblyAI](https://www.assemblyai.com/)
+- **Data Visualization**: React Native SVG / Charting library
+- **Storage**: Local persistence for speech history
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed on your local machine:
+- [Node.js](https://nodejs.org/) (v18 or newer recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- Expo Go app installed on your physical iOS/Android device (optional, for testing)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/VinayakP003/speak-daily.git
+   cd speak-daily
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Set up your environment variables:
+   Create a `.env` file in the root directory and add your AssemblyAI API credentials:
+   ```env
+   EXPO_PUBLIC_ASSEMBLYAI_API_KEY=your_assemblyai_api_key_here
+   ```
 
+4. Start the development server:
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+5. Run the app:
+   - Scan the QR code with your phone's camera (iOS) or Expo Go app (Android).
+   - Alternatively, press `a` to open in an Android emulator or `i` to open in an iOS simulator.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📂 Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+├── app/                  # Expo Router navigation and screens
+│   ├── (tabs)/           # Tabbed navigation (Index, History, etc.)
+│   └── _layout.tsx       # Root layout configuration
+├── assets/               # Local icons, logos, and images
+├── components/           # Reusable UI components (HistoryList, ProgressChart, SentenceBreakdown, etc.)
+├── constants/            # Theme variables and static configurations
+├── hooks/                # Custom React hooks (Theme, Color schemes)
+├── lib/                  # Core logic modules (transcription, scoring, suggestions, text normalization)
+└── scripts/              # Local testing and debugging scripts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🤝 Contributing
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Contributions are welcome! Please open an issue or submit a pull request for any suggestions, enhancements, or bug fixes.
